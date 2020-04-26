@@ -22,7 +22,7 @@ const Books = () => {
 			getBooks();
 
 			if (error === 'Unauthorized. Login to access this page') {
-				setAlert('Create an account or Login to view book reviews', 'primary', 60000);
+				setAlert('Create an account or Login to view book reviews', 'primary');
 				clearErrors();
 			}
 		},

@@ -19,7 +19,7 @@ const BookState = (props) => {
 	//* Get Books
 	const getBooks = async () => {
 		try {
-			const res = await axios.get(`${serverURL}/api/books?page=1&limit=100`);
+			const res = await axios.get(`${serverURL}/api/books?page=1&limit=100`, {withCredentials: true});
 			dispatch({
 				type: GET_BOOKS,
 				payload: res.data.data
