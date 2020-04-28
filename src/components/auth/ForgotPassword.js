@@ -21,7 +21,7 @@ const ForgotPassword = () => {
 				clearErrors();
 			}
 		},
-		// eslint-disable-next-line
+					// eslint-disable-next-line
 		[ error, message ]
 	);
 

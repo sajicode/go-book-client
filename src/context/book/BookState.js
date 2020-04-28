@@ -19,7 +19,7 @@ const BookState = (props) => {
 	//* Get Books
 	const getBooks = async () => {
 		try {
-			const res = await axios.get(`${serverURL}/api/books?page=1&limit=100`, {withCredentials: true});
+			const res = await axios.get(`${serverURL}/api/books?page=1&limit=100`);
 			dispatch({
 				type: GET_BOOKS,
 				payload: res.data.data
@@ -74,11 +74,11 @@ const BookState = (props) => {
 
 	//TODO set cloudinary url in env
 	const uploadBookCover = async (e) => {
-		const cloudinaryURL = process.env.REACT_APP_CLOUDINARY_URL;
+		const cloudinaryURL = 'https://api.cloudinary.com/v1_1/sajicode/image/upload';
 		const files = e.target.files;
 		const data = new FormData();
 		data.append('file', files[0]);
-		data.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET);
+		data.append('upload_preset', 'revbook');
 
 		try {
 			const res = await fetch(cloudinaryURL, {
