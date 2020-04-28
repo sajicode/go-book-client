@@ -3,7 +3,7 @@ import axios from 'axios';
 import BookContext from './bookContext';
 import bookReducer from './bookReducer';
 import { CREATE_BOOK, GET_BOOKS, BOOK_ERROR, BOOK_UPLOAD, BOOK_UPLOAD_ERROR, GET_BOOK } from '../types';
-import { serverURL, cloudinaryURL: cURL, cloudinaryUploadPreset } from '../../utils/helper';
+import { serverURL, cloudinaryURL as cURL, cloudinaryUploadPreset } from '../../utils/helper';
 
 const BookState = (props) => {
 	const initialState = {

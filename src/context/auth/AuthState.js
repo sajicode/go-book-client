@@ -20,7 +20,7 @@ import {
 	RESET_SUCCESS
 } from '../types';
 import Cookies from 'universal-cookie';
-import { serverURL, cloudinaryURL: cURL, cloudinaryUploadPreset } from '../../utils/helper';
+import { serverURL, cloudinaryURL as cURL, cloudinaryUploadPreset } from '../../utils/helper';
 
 const cookie = new Cookies();
 
