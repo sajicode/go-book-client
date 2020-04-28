@@ -3,7 +3,7 @@ import axios from 'axios';
 import BookContext from './bookContext';
 import bookReducer from './bookReducer';
 import { CREATE_BOOK, GET_BOOKS, BOOK_ERROR, BOOK_UPLOAD, BOOK_UPLOAD_ERROR, GET_BOOK } from '../types';
-import { serverURL } from '../../utils/helper';
+import { serverURL, cloudinaryURL: cURL, cloudinaryUploadPreset } from '../../utils/helper';
 
 const BookState = (props) => {
 	const initialState = {
@@ -74,11 +74,11 @@ const BookState = (props) => {
 
 	//TODO set cloudinary url in env
 	const uploadBookCover = async (e) => {
-		const cloudinaryURL = 'https://api.cloudinary.com/v1_1/sajicode/image/upload';
+		const cloudinaryURL = cURL;
 		const files = e.target.files;
 		const data = new FormData();
 		data.append('file', files[0]);
-		data.append('upload_preset', 'revbook');
+		data.append('upload_preset', cloudinaryUploadPreset);
 
 		try {
 			const res = await fetch(cloudinaryURL, {
