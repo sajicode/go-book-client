@@ -67,7 +67,7 @@ const BookState = (props) => {
 		} catch (error) {
 			dispatch({
 				type: BOOK_ERROR,
-				payload: error.response.data.message
+				payload: error.response.data.message || 'Internal server error'
 			});
 		}
 	};
